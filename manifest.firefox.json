@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "NeuroFlow — Binaural Focus Engine",
+  "short_name": "NeuroFlow",
+  "version": "1.0.0",
+  "description": "Binaural beats & ambient soundscapes for peak cognitive performance.",
+  "author": "NeuroFlow Team",
+
+  "icons": {
+    "16":  "icons/icon16.png",
+    "32":  "icons/icon32.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "NeuroFlow",
+    "default_icon": {
+      "16":  "icons/icon16.png",
+      "48":  "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "https://freesound.org/*",
+    "https://api.freesound.org/*",
+    "https://cdn.pixabay.com/*"
+  ],
+
+  "content_security_policy": "script-src 'self'; object-src 'self';",
+
+  "web_accessible_resources": ["audio-engine.js", "icons/*"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "neuroflow@extension",
+      "strict_min_version": "109.0"
+    }
+  }
+}
